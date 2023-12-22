@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 100
+execude = '''
+    env/
+    tests/
+    dist/
+    demo/
+    __pycache__/
+    .git/
+'''

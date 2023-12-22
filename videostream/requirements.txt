@@ -1,0 +1,4 @@
+flet
+fastapi
+unicorn
+opencv-python
