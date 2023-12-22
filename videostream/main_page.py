@@ -14,7 +14,7 @@ async def main(page: ft.Page):
     await page.add_async(
         ft.Column(
             [
-                ft.Text("Webcam Capture: ", size=10, weight="bold"),
+                ft.Text("Video capture example: ", size=10, weight="bold"),
                 Countup(0, queue),
                 VideoControl(0, queue),
             ]

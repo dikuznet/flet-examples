@@ -1,4 +1,4 @@
 flet
 fastapi
-unicorn
+uvicorn
 opencv-python
