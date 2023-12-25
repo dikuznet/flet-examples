@@ -30,7 +30,7 @@ class Countup(ft.UserControl):
             if not self.stop:
                 self.seconds += 1
                 mins, secs = divmod(self.seconds, 60)
-                self.countup.value = "{:02d}:{:02d} sec".format(mins, secs)
+                self.countup.value = f"{mins:02d}:{secs:02d} sec"
                 await self.update_async()
             await asyncio.sleep(1)
 
