@@ -10,7 +10,7 @@ async def main(page: ft.Page):
     page.title = "Video capture example"
     page.theme_mode = ft.ThemeMode.DARK
     page.padding = 50
-    queue = asyncio.Queue()
+    queue: asyncio.Queue[int] = asyncio.Queue()
     await page.add_async(
         ft.Column(
             [

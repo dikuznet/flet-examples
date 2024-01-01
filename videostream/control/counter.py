@@ -8,7 +8,7 @@ class Countup(ft.UserControl):
         super().__init__()
         self.seconds = seconds
         self.queue = queue
-        self.stop = True
+        self.stop = False
 
     async def did_mount_async(self):
         self.running = True

@@ -11,7 +11,9 @@ class VideoControl(ft.UserControl):
         super().__init__()
         self.seconds = seconds
         self.queue = queue
-        self.streming = False
+        self.streming = True
+        self.cam_index = 0 # CV_CAP_ANY
+        self.cap = cv2.VideoCapture(self.cam_index)
 
     async def did_mount_async(self):
         self.running = True
@@ -36,7 +38,7 @@ class VideoControl(ft.UserControl):
 
     async def start_click(self, e):
         if not self.cap.isOpened():
-            self.cap = cv2.VideoCapture(0)
+            self.cap = cv2.Open(self.cam_index)
         self.streming = True
         await self.queue.put(0)
 
@@ -45,7 +47,6 @@ class VideoControl(ft.UserControl):
         await self.queue.put(-1)
 
     def build(self):
-        self.cap = cv2.VideoCapture(0)
         if self.cap.isOpened():
             success, frame = self.cap.read()
             ret, buffer = cv2.imencode(".jpg", frame)
