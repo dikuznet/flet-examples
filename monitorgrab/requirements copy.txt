@@ -1,0 +1,5 @@
+flet
+fastapi
+flet-fastapi
+uvicorn
+opencv-python
